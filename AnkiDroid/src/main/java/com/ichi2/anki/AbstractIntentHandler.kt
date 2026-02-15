@@ -35,7 +35,7 @@ abstract class AbstractIntentHandler : Activity() {
         setContentView(R.layout.progress_bar)
         
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
-            // prevent drawing views to show splashscreen animation
+            // continue showing splashscreen animation
             val content = findViewById<View>(android.R.id.content)
             content.viewTreeObserver.addOnPreDrawListener { false }
         }
