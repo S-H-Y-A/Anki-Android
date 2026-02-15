@@ -33,7 +33,7 @@ abstract class AbstractIntentHandler : Activity() {
         Themes.setTheme(this)
         disableXiaomiForceDarkMode(this)
         setContentView(R.layout.progress_bar)
-        
+
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
             // continue showing splashscreen animation
             val content = findViewById<View>(android.R.id.content)
