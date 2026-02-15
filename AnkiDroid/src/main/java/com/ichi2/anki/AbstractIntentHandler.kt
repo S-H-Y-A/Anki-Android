@@ -17,7 +17,9 @@
 package com.ichi2.anki
 
 import android.app.Activity
+import android.os.Build
 import android.os.Bundle
+import android.view.View
 import com.ichi2.themes.Themes
 import com.ichi2.themes.Themes.disableXiaomiForceDarkMode
 
@@ -31,5 +33,11 @@ abstract class AbstractIntentHandler : Activity() {
         Themes.setTheme(this)
         disableXiaomiForceDarkMode(this)
         setContentView(R.layout.progress_bar)
+        
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
+            // prevent drawing views to show splashscreen animation
+            val content = findViewById<View>(android.R.id.content)
+            content.viewTreeObserver.addOnPreDrawListener { false }
+        }
     }
 }
