@@ -5,6 +5,8 @@
         <item name="android:windowBackground">@drawable/launch_screen</item>
     </style>
 
+    <style name="Translucent" parent="@android:style/Theme.Translucent.NoTitleBar"/>
+
     <style name="Animation.Translucent" parent="@android:style/Animation.Translucent">
         <item name="android:windowEnterAnimation">@null</item>
         <item name="android:windowExitAnimation">@anim/translucent_exit</item>
